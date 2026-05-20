@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Award, Users, Music, Dumbbell } from "lucide-react";
 
-import instructor from "../assets/instructor.jpeg";
+import instructor from "../assets/instructor.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 

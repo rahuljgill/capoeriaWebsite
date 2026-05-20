@@ -12,8 +12,6 @@ import About from "../sections/About";
 import AdditionalResources from "../sections/AdditionalResouces";
 import VideoSection from "../sections/VideoSection";
 
-import image from "../assets/image.png";
-
 function Home() {
   const heroContentRef = useRef<HTMLDivElement>(null);
   const heroImageRef = useRef<HTMLDivElement>(null);
@@ -79,8 +77,10 @@ function Home() {
                 <div className="absolute -right-4 -top-4 h-40 w-40 rounded-full bg-[#c98b2b]/20 blur-3xl" />
 
                 <img
-                  src={image}
+                  src="/image.webp"
                   alt="Capoeira movement artwork"
+                  loading="eager"
+                  decoding="async"
                   className="relative z-10 h-auto w-full object-contain drop-shadow-2xl"
                 />
 
@@ -146,8 +146,10 @@ function Home() {
               <div className="absolute -right-8 -top-8 h-48 w-48 scale-125 rounded-full bg-[#c98b2b]/20 blur-3xl transition duration-500" />
 
               <img
-                src={image}
+                src="/image.webp"
                 alt="Capoeira movement artwork"
+                fetchPriority="high"
+                decoding="async"
                 className="relative z-10 h-auto w-full object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-105"
               />
 
