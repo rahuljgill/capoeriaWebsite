@@ -124,9 +124,9 @@ function Services() {
       <div className="absolute inset-0 bg-[#f7f2ea]/80" />
 
       {/* Ambient Glow */}
-      <div className="absolute left-[-120px] top-[-120px] h-80 w-80 rounded-full bg-[#c98b2b]/10 blur-3xl" />
+      <div className="absolute -left-30 -top-30 h-80 w-80 rounded-full bg-[#c98b2b]/10 blur-3xl" />
 
-      <div className="absolute bottom-[-160px] right-[-160px] h-[420px] w-[420px] rounded-full border-[35px] border-[#c98b2b]/10" />
+      <div className="absolute -bottom-40 -right-40 h-105 w-105 rounded-full border-35 border-[#c98b2b]/10" />
 
       <div ref={sectionContentRef} className="relative z-10 mx-auto max-w-7xl">
         {/* Header */}
@@ -152,7 +152,7 @@ function Services() {
               key={item.title}
               className="service-card group relative overflow-hidden rounded-[28px] border border-[#c98b2b]/15 bg-white/85 p-7 shadow-lg shadow-black/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-white/95 hover:shadow-2xl hover:shadow-black/10"
             >
-              <div className="absolute right-5 top-5 h-16 w-16 rounded-full border-[10px] border-[#c98b2b]/10 transition duration-300 group-hover:scale-125 group-hover:border-[#c98b2b]/20" />
+              <div className="absolute right-5 top-5 h-16 w-16 rounded-full border-10 border-[#c98b2b]/10 transition duration-300 group-hover:scale-125 group-hover:border-[#c98b2b]/20" />
 
               <div className="relative z-10">
                 <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#c98b2b]">

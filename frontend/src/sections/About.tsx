@@ -16,10 +16,7 @@ function About() {
 
     gsap.fromTo(
       imageRef.current,
-      {
-        opacity: 0,
-        y: 50,
-      },
+      { opacity: 0, y: 50 },
       {
         opacity: 1,
         y: 0,
@@ -35,10 +32,7 @@ function About() {
 
     gsap.fromTo(
       textRef.current,
-      {
-        opacity: 0,
-        y: 50,
-      },
+      { opacity: 0, y: 50 },
       {
         opacity: 1,
         y: 0,
@@ -82,26 +76,22 @@ function About() {
       id="about"
       className="relative overflow-hidden bg-[#1b120c] py-24 text-white"
     >
-      {/* Background Glow */}
-      <div className="absolute left-[-100px] top-0 h-96 w-96 rounded-full bg-[#c98b2b]/10 blur-3xl" />
+      <div className="absolute -left-25 top-0 h-96 w-96 rounded-full bg-[#c98b2b]/10 blur-3xl" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
-        {/* IMAGE SIDE */}
-        <div ref={imageRef} className="relative">
-          {/* Brush Border */}
-          <div className="absolute -left-6 -top-6 h-full w-full rounded-[32px] border border-[#c98b2b]/20 bg-[#c98b2b]/5" />
+        {/* DESKTOP IMAGE SIDE */}
+        <div ref={imageRef} className="relative hidden lg:block">
+          <div className="absolute -left-6 -top-6 h-full w-full rounded-4xl border border-[#c98b2b]/20 bg-[#c98b2b]/5" />
 
-          <div className="relative overflow-hidden rounded-[32px] shadow-2xl">
+          <div className="relative overflow-hidden rounded-4xl shadow-2xl">
             <img
               src={instructor}
               alt="Capoeira Instructor"
-              className="h-[550px] w-full object-cover transition duration-700 hover:scale-105"
+              className="h-137.5 w-full object-cover transition duration-700 hover:scale-105"
             />
 
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
 
-            {/* Floating Badge */}
             <div className="absolute bottom-6 left-6 rounded-2xl border border-white/10 bg-black/50 px-5 py-4 backdrop-blur-md">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c98b2b]">
                 Bath Capoeira Group
@@ -118,9 +108,32 @@ function About() {
             Meet Your Instructor
           </p>
 
-          <h2 className="mt-5 max-w-xl text-5xl font-black uppercase leading-[1] text-white">
+          <h2 className="mt-5 max-w-xl text-5xl font-black uppercase leading-none text-white">
             More Than A Martial Art.
           </h2>
+
+          {/* MOBILE IMAGE */}
+          <div className="relative mt-10 lg:hidden">
+            <div className="absolute -left-4 -top-4 h-full w-full rounded-[28px] border border-[#c98b2b]/20 bg-[#c98b2b]/5" />
+
+            <div className="relative overflow-hidden rounded-[28px] shadow-2xl">
+              <img
+                src={instructor}
+                alt="Capoeira Instructor"
+                className="h-105 w-full object-cover"
+              />
+
+              <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
+
+              <div className="absolute bottom-5 left-5 rounded-2xl border border-white/10 bg-black/50 px-4 py-3 backdrop-blur-md">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#c98b2b]">
+                  Bath Capoeira Group
+                </p>
+
+                <h3 className="mt-1 text-xl font-black uppercase">Gira</h3>
+              </div>
+            </div>
+          </div>
 
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#d7cec5]">
             Capoeira combines movement, music, culture and community into a
@@ -135,7 +148,6 @@ function About() {
             to learn, move and grow together.
           </p>
 
-          {/* FEATURES */}
           <div className="mt-12 grid gap-5 sm:grid-cols-2">
             {features.map((feature) => {
               const Icon = feature.icon;

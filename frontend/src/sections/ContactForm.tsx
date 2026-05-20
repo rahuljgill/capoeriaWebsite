@@ -10,7 +10,6 @@ function ContactForm() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [enquiry, setEnquiry] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
 
   const formRef = useRef<HTMLFormElement>(null);
   const contactCardRef = useRef<HTMLDivElement>(null);
@@ -52,54 +51,29 @@ function ContactForm() {
     );
   }, []);
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!email.trim()) {
       setError("Email is required.");
-      setSuccess("");
       return;
     }
 
     if (!email.includes("@")) {
       setError("Please enter a valid email address.");
-      setSuccess("");
       return;
     }
 
     if (!enquiry.trim()) {
       setError("Please enter your enquiry.");
-      setSuccess("");
       return;
     }
 
     setError("");
-    setSuccess("");
 
-    const formData = new FormData(e.currentTarget);
-
-    try {
-      const response = await fetch("https://formspree.io/f/meenkbgl", {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error("Form submission failed");
-      }
-
-      setSuccess("Your message has been sent. Gira will get back to you soon.");
-
-      setEmail("");
-      setPhoneNumber("");
-      setEnquiry("");
-    } catch {
-      setError("Something went wrong. Please try again.");
-      setSuccess("");
-    }
+    setEmail("");
+    setPhoneNumber("");
+    setEnquiry("");
   }
 
   return (
@@ -107,8 +81,8 @@ function ContactForm() {
       id="contact"
       className="relative overflow-hidden bg-[#1b120c] px-6 py-24 text-white"
     >
-      <div className="absolute right-[-140px] top-[-140px] h-[420px] w-[420px] rounded-full border-[35px] border-[#c98b2b]/10" />
-      <div className="absolute bottom-[-120px] left-[-120px] h-80 w-80 rounded-full bg-[#c98b2b]/10 blur-3xl" />
+      <div className="absolute -right-35 -top-35 h-105 w-105 rounded-full border-35 border-[#c98b2b]/10" />
+      <div className="absolute -bottom-30 -left-30 h-80 w-80 rounded-full bg-[#c98b2b]/10 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mx-auto mb-14 max-w-3xl text-center">
@@ -129,20 +103,12 @@ function ContactForm() {
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
           <form
             ref={formRef}
-            action="https://formspree.io/f/meenkbgl"
-            method="POST"
             onSubmit={handleSubmit}
-            className="rounded-[28px] border border-white/10 bg-white/[0.06] p-6 shadow-2xl backdrop-blur-md sm:p-8"
+            className="rounded-[28px] border border-white/10 bg-white/6 p-6 shadow-2xl backdrop-blur-md sm:p-8"
           >
             {error && (
               <p className="mb-5 rounded-xl border border-red-400/20 bg-red-500/10 px-4 py-3 text-sm text-red-200">
                 {error}
-              </p>
-            )}
-
-            {success && (
-              <p className="mb-5 rounded-xl border border-green-400/20 bg-green-500/10 px-4 py-3 text-sm text-green-200">
-                {success}
               </p>
             )}
 
@@ -204,7 +170,7 @@ function ContactForm() {
             ref={contactCardRef}
             className="relative overflow-hidden rounded-[28px] border border-[#c98b2b]/20 bg-[#f7f2ea] p-8 text-[#1e140d] shadow-2xl"
           >
-            <div className="absolute right-[-80px] top-[-80px] h-56 w-56 rounded-full border-[24px] border-[#c98b2b]/10" />
+            <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full border-24 border-[#c98b2b]/10" />
 
             <div className="relative z-10">
               <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#c98b2b]">

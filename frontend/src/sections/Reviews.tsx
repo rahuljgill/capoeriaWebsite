@@ -91,8 +91,8 @@ function Reviews() {
       className="relative overflow-hidden bg-[#f7f2ea] px-6 py-24 text-[#1e140d]"
     >
       {/* Background Detail */}
-      <div className="absolute right-[-140px] top-[-140px] h-[420px] w-[420px] rounded-full border-[35px] border-[#c98b2b]/10" />
-      <div className="absolute left-[-120px] bottom-[-120px] h-80 w-80 rounded-full bg-[#c98b2b]/10 blur-3xl" />
+      <div className="absolute -right-35 -top-35 h-105 w-105 rounded-full border-35 border-[#c98b2b]/10" />
+      <div className="absolute -left-30 -bottom-30 h-80 w-80 rounded-full bg-[#c98b2b]/10 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Header */}
@@ -165,7 +165,7 @@ function Reviews() {
           ))}
         </div>
 
-        {/* Google CTA */}
+        {/* Google Link */}
         <div className="mt-14 text-center">
           <a
             href="https://www.google.com/search?sca_esv=afc85aa92f7b31d4&sxsrf=ANbL-n61ybbI6hub45xXQJPp6FXTwI3ewQ:1779207588458&q=bath+capoeira+group&spell=1&sa=X&ved=2ahUKEwiEvqri4MWUAxVaYEEAHYg0HqQQBSgAegQIEBAB&biw=1280&bih=630&dpr=1.5#lrd=0x48718199eab2f82d:0x458f52f51a2e8884,1,,,,"

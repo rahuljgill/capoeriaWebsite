@@ -48,12 +48,14 @@ function Home() {
         id="home"
         className="relative min-h-screen w-full overflow-hidden"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(194,132,37,0.15),_transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(194,132,37,0.15),transparent_40%)]" />
+
         <div className="absolute right-20 top-32 h-72 w-72 rounded-full bg-[#c98b2b]/10 blur-3xl" />
 
         <Navbar />
 
         <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pt-32 pb-20 lg:flex-row lg:items-center lg:gap-12">
+          {/* LEFT CONTENT */}
           <div ref={heroContentRef} className="w-full lg:w-1/2">
             <h1 className="max-w-xl text-5xl font-black uppercase leading-[0.95] tracking-tight sm:text-6xl md:text-7xl">
               <span className="block">Movement.</span>
@@ -71,6 +73,34 @@ function Home() {
               Bath.
             </p>
 
+            {/* MOBILE IMAGE */}
+            <div className="mt-14 flex justify-center lg:hidden">
+              <div className="group relative w-full max-w-105">
+                <div className="absolute -right-4 -top-4 h-40 w-40 rounded-full bg-[#c98b2b]/20 blur-3xl" />
+
+                <img
+                  src={image}
+                  alt="Capoeira movement artwork"
+                  className="relative z-10 h-auto w-full object-contain drop-shadow-2xl"
+                />
+
+                <div className="absolute -bottom-6 left-3 z-20 rounded-2xl border border-[#c98b2b]/20 bg-white/90 p-4 shadow-xl backdrop-blur">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[#c98b2b]">
+                    Weekly Classes
+                  </p>
+
+                  <h3 className="mt-1 text-lg font-black">
+                    Tuesdays & Fridays
+                  </h3>
+
+                  <p className="mt-1 text-xs text-[#5f5147]">
+                    Beginners welcome. No experience needed.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* FEATURES */}
             <div
               ref={heroFeatureRef}
               className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3"
@@ -79,6 +109,7 @@ function Home() {
                 <h3 className="text-sm font-black uppercase tracking-wide">
                   Beginner Friendly
                 </h3>
+
                 <p className="mt-2 text-sm text-[#5f5147]">
                   Perfect for adults starting their Capoeira journey.
                 </p>
@@ -88,6 +119,7 @@ function Home() {
                 <h3 className="text-sm font-black uppercase tracking-wide">
                   Fitness & Fun
                 </h3>
+
                 <p className="mt-2 text-sm text-[#5f5147]">
                   Build strength, confidence and flexibility.
                 </p>
@@ -97,6 +129,7 @@ function Home() {
                 <h3 className="text-sm font-black uppercase tracking-wide">
                   Strong Community
                 </h3>
+
                 <p className="mt-2 text-sm text-[#5f5147]">
                   More than a class. We’re a family.
                 </p>
@@ -104,11 +137,12 @@ function Home() {
             </div>
           </div>
 
+          {/* DESKTOP IMAGE */}
           <div
             ref={heroImageRef}
-            className="relative mt-20 flex w-full scale-[1.04] rotate-[1deg] justify-center shadow-lg lg:mt-0 lg:w-1/2"
+            className="relative mt-20 hidden w-full scale-[1.04] rotate-1 justify-center shadow-lg lg:flex lg:mt-0 lg:w-1/2"
           >
-            <div className="group relative w-full max-w-[620px]">
+            <div className="group relative w-full max-w-155">
               <div className="absolute -right-8 -top-8 h-48 w-48 scale-125 rounded-full bg-[#c98b2b]/20 blur-3xl transition duration-500" />
 
               <img
@@ -132,19 +166,26 @@ function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 h-32 w-full bg-gradient-to-t from-[#f7f2ea] to-transparent" />
+        <div className="absolute bottom-0 left-0 h-32 w-full bg-linear-to-t from-[#f7f2ea] to-transparent" />
       </section>
 
       <VideoSection />
+
       <Services />
+
       <About />
+
       <Reviews />
+
       <FAQ />
+
       <ContactForm />
+
       <LocationMap />
+
       <AdditionalResources />
 
-      <footer className="w-full bg-gradient-to-b from-[#2a1b12] to-[#1b120c] py-8 text-white">
+      <footer className="w-full bg-linear-to-b from-[#2a1b12] to-[#1b120c] py-8 text-white">
         <div className="mx-auto max-w-5xl px-6 text-center text-sm text-gray-400">
           © 2026 Bath Capoeira Group. All rights reserved.
         </div>

@@ -57,9 +57,9 @@ function LocationMap() {
       id="location"
       className="relative overflow-hidden bg-[#f7f2ea] px-6 py-24 text-[#1e140d]"
     >
-      <div className="absolute left-[-140px] top-[-140px] h-[420px] w-[420px] rounded-full border-[35px] border-[#c98b2b]/10" />
+      <div className="absolute -left-35 -top-35 h-105 w-105 rounded-full border-35 border-[#c98b2b]/10" />
 
-      <div className="absolute bottom-[-120px] right-[-120px] h-80 w-80 rounded-full bg-[#c98b2b]/10 blur-3xl" />
+      <div className="absolute -bottom-30 -right-30 h-80 w-80 rounded-full bg-[#c98b2b]/10 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Header */}
@@ -79,7 +79,7 @@ function LocationMap() {
         </div>
 
         {/* Content */}
-        <div className="overflow-hidden rounded-[32px] border border-[#c98b2b]/15 bg-white/80 shadow-2xl shadow-black/5 backdrop-blur-sm">
+        <div className="overflow-hidden rounded-4xl border border-[#c98b2b]/15 bg-white/80 shadow-2xl shadow-black/5 backdrop-blur-sm">
           <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
             {/* Left Side */}
             <div ref={infoRef} className="space-y-5 p-7 sm:p-9">
@@ -167,11 +167,11 @@ function LocationMap() {
             </div>
 
             {/* Map */}
-            <div ref={mapRef} className="min-h-[420px] lg:min-h-full">
+            <div ref={mapRef} className="min-h-105 lg:min-h-full">
               <iframe
                 key={selectedLocation}
                 src={mapSrc}
-                className="h-[460px] w-full border-0 lg:h-full"
+                className="h-115 w-full border-0 lg:h-full"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Bath Capoeira Group location map"
